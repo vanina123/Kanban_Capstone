@@ -1,8 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header styling begins */
+.header-logo {
+  width: 80px;
+  margin: 1vw 0 0 0;
+}
+
+header {
+  background-color: #212121;
+  padding: 0 10vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meal-item {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.meal-item:hover {
+  color: #d5a40c;
+}
+
+#search-box {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 2px;
+  border-radius: 10px;
+}
+
+#search-btn {
+  border-style: none;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+#search-btn:hover {
+  background-color: #d5a40c;
+  border-style: none;
+}
+
+/* Header styling ends */
+
+/* Footer styling begins */
 footer {
   color: white;
   background-color: #212121;
   align-content: center;
+  padding: 0 10vw;
 }
 
 .logo {
@@ -17,13 +71,13 @@ footer {
   color: #d8070b;
 }
 
-a {
+.autor a {
   color: gray;
   font-size: 10px;
   text-decoration: none;
 }
 
-a:hover {
+.autor a:hover {
   color: white;
 }
 
@@ -33,3 +87,5 @@ a:hover {
   flex-direction: row;
   justify-content: space-between;
 }
+
+/* Footer styling ends */
