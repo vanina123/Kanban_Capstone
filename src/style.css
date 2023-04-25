@@ -1,3 +1,35 @@
-h1 {
-  color: blue;
+
+footer {
+  color: white;
+  background-color: #212121;
+  align-content: center;
+}
+
+.logo {
+  width: 80px;
+}
+
+.autor {
+  color: #d8070b;
+}
+
+.rights {
+  color: #d8070b;
+}
+
+a {
+  color: gray;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+.meal-ft {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
