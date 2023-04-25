@@ -20,12 +20,13 @@ header {
   align-items: center;
 }
 
-.menu > a {
+.meal-item {
   font-size: 1.2rem;
+  text-decoration: none;
   color: #fff;
 }
 
-.menu > a:hover {
+.meal-item:hover {
   color: #d5a40c;
 }
 
@@ -47,6 +48,7 @@ header {
   background-color: #d5a40c;
   border-style: none;
 }
+
 /* Header styling ends */
 
 /* Footer styling begins */
@@ -69,13 +71,13 @@ footer {
   color: #d8070b;
 }
 
-a {
+.autor a {
   color: gray;
   font-size: 10px;
   text-decoration: none;
 }
 
-a:hover {
+.autor a:hover {
   color: white;
 }
 
@@ -85,4 +87,5 @@ a:hover {
   flex-direction: row;
   justify-content: space-between;
 }
+
 /* Footer styling ends */
