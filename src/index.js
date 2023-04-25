@@ -8,3 +8,4 @@ myIcon.src = logo;
 myIcon.classList.add('logo');
 
 element.appendChild(myIcon);
+
