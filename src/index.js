@@ -3,7 +3,9 @@ import "./style.css";
 import logo from "./logo.png";
 import Meals from "./modules/meals.js";
 import Pop from "./modules/popup.js";
+import showPopup from "./modules/popup.js";
 
+const footer = document.querySelector(".footer");
 const element = document.querySelector(".img-ft");
 const headerImgContainer = document.querySelector(".logo-box");
 const mealContainer = document.querySelector(".meals-container");
@@ -21,6 +23,13 @@ headerImgContainer.appendChild(headerlogo);
 element.appendChild(myIcon);
 
 const data = newMeal.getAllMeals();
+
+// const selected = (id, data) =>{
+//   const filtered = data.filter((hello) =>{
+//     hello.idMeal === id;
+//   })
+//   return filtered
+// }
 
 const showMealCards = async () => {
   const DATA = await data;
@@ -42,7 +51,16 @@ const showMealCards = async () => {
     likeQtyBox.classList.add("like-box");
     comment.classList.add("comment-btn");
     comment.id = DATA[i].idMeal;
-    comment.addEventListener('click', showPopup(`${DATA[i].idMeal}`))
+    // show popup
+    comment.addEventListener('click', (e) => {
+      // Pop.classList.remove('hide')
+      // const theMeal = selected(DATA[i].idMeal, DATA)
+      // console.log(theMeal)
+      // selected(DATA[i].idMeal)
+      // showPopup(theMeal, footer)
+      Pop.classList.remove('hide')
+
+    })
 
     mealImg.src = DATA[i].strMealThumb;
     mealName.innerText = DATA[i].strMeal;
@@ -59,27 +77,15 @@ const showMealCards = async () => {
     card.appendChild(comment);
 
     mealContainer.appendChild(card);
-
-    // comment.addEventlistener('click', (event) => {
-    //       Pop.classList.remove('hide');
-    //       event.preventDefault();
-    //   });
   }
 };
-const footer = document.querySelector(".footer");
-const showPopup = (id)=>{
-  const selected = document.getElementById(id)
-  selected.addEventListener('click', (e)=>{
-    Pop.classList.remove('hide');
-  })
-}
+
+
 window.addEventListener("load", () => {
   newMeal.getAllMeals();
   showMealCards();
   footer.appendChild(Pop);
+  // showPopup(data,parent);
 });
 
-// const modal = document.createElement('div');
-// modal.classList.add('modal');
-// modal.classList.add('popup');
-// const content
+export default display;
