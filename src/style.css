@@ -51,6 +51,73 @@ header {
 
 /* Header styling ends */
 
+/* Cards section styling starts */
+
+.meals-container {
+  padding: 0 10vw;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-rows: 33.33% 33.33% 33.33%;
+
+  /* gap: 15px; */
+  height: 100%;
+
+  /* justify-content: flex-start;
+
+  flex-wrap: wrap; */
+}
+
+.meal-card {
+  border: 1px solid blue;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#meal0 {
+  grid-row: 1/2;
+  grid-column: 1/2;
+
+  /* width: 100%; */
+
+  /* height: 20px; */
+}
+
+.meal-img {
+  width: 100%;
+}
+
+#like-icn {
+  font-size: 20px;
+  color: #d8070b;
+}
+
+.name-like-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-like-box p {
+  margin: 0;
+}
+
+.like-box p {
+  margin: 0;
+}
+
+.comment-btn {
+  width: 80%;
+  margin: 2px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.comment-btn:hover {
+  background-color: #d5a40c;
+}
+
+/* Cards section styling ends */
+
 /* Footer styling begins */
 footer {
   color: white;
