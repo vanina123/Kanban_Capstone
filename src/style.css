@@ -156,3 +156,50 @@ footer {
 }
 
 /* Footer styling ends */
+/* popup styling */
+.comment-frm{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-left: 35%;
+}
+.comment{
+  margin: 0 0 20px 0;
+}
+
+.comment-btn1{
+    border-radius: 12px;
+    padding: 1rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: x-large;
+    transition: 0.5s ease;
+}
+.comment-btn1:hover{
+    background-color: #d5a40c;
+}
+
+.pop{
+  display: flex;
+    flex-direction: column;
+  background-color: #d8070b;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.closebtn {
+  text-align: right;
+  font-size: 30px;
+  color: #d5a40c;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.hide{
+  display: none;
+}
