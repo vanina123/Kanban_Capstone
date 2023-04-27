@@ -20,9 +20,21 @@ headerImgContainer.appendChild(headerlogo);
 element.appendChild(myIcon);
 
 const data = newMeal.getAllMeals();
+const likes = newMeal.getAllLikes();
+
+
 
 const showMealCards = async () => {
   const DATA = await data;
+  const Likes = await likes
+  for (let i = 0; i < Likes.length; i++) {
+    DATA.map((info) => {
+      if (info.idMeal === Likes[i].item_id) {
+        info.likes = Likes[i].likes
+      }
+    })
+  }
+
   for (let i = 0; i < 9; i++) {
     const card = document.createElement('div');
     const mealImg = new Image();
@@ -43,7 +55,7 @@ const showMealCards = async () => {
     mealImg.src = DATA[i].strMealThumb;
     mealName.innerText = DATA[i].strMeal;
     likeBox.innerHTML = '<i class="fa fa-heart" id="like-icn"></i>';
-    likeQty.innerText = '5 likes';
+    likeQty.innerText = `${DATA[i].likes} likes`;
     comment.innerText = 'comment';
 
     likeQtyBox.appendChild(likeBox);
@@ -59,6 +71,6 @@ const showMealCards = async () => {
 };
 
 window.addEventListener('load', () => {
-  newMeal.getAllMeals();
   showMealCards();
+ 
 });
