@@ -1,77 +1,24 @@
-import logo from "../../src/logo.png";
-// import display from "../index.js";
-const showPopup = (DATA, parent) => {
+const thePopup = document.querySelector('.popup-container');
 
-// const parent = document.getElementsByClassName('footer')
- const pop = document.createElement("div");
- const span = document.createElement("span");
-const mealImg = new Image();
-const mealName = document.createElement("p");
-const catergory = document.createElement("p");
-const area = document.createElement("p");
-const youtube = document.createElement("a");
-// comment details
-const time = document.createElement("div");
-// form div
-const popup = document.createElement("div");
-const form = document.createElement("form");
-const head = document.createElement("h2");
-const input = document.createElement("input");
-const textarea = document.createElement("textarea");
-const btn1 = document.createElement("button");
+const createPopup = (selected) => {
+  thePopup.innerHTML = `<div class="pop"><span class="closebtn">×</span>
+<img src="${selected[0].strMealThumb}" class="meal-img">
+<p class="meal-name">${selected[0].strMeal}</p><p class="category">${selected[0].strCategory}</p>
+<p class="area">${selected[0].strArea}</p>
+<a href="#" class="youtube">${selected[0].strYoutube}</a>
+<div></div><div><form class="comment-frm">
+<h2>Add a comment</h2>
+<input type="text" placeholder="Your Name" class="comment">
+<textarea col="30" rows="10" class="comment" data-gramm="false" wt-ignore-input="true">
+</textarea><button class="comment-btn1">Comment</button></form>
+</div>
+</div>`;
 
-// adding content
-span.innerHTML = "&times;";
-mealImg.src = DATA.strMealThumb
-mealName.innerHTML = DATA.strMeal
-catergory.innerHTML = DATA.strCategory
-area.innerHTML = DATA.strArea
-youtube.innerHTML = DATA.strYoutube
-head.innerHTML = "Add a comment";
-btn1.innerHTML = "Comment";
+  const pop = document.querySelector('.pop');
+  const closbtn = document.querySelector('.closebtn');
+  closbtn.addEventListener('click', () => {
+    pop.classList.add('hide');
+  });
+};
 
-// set attribute
-youtube.setAttribute("href", "#");
-textarea.setAttribute("col", "30");
-textarea.setAttribute("rows", "10");
-input.setAttribute("type", "text");
-input.setAttribute("placeholder", "Your Name");
-
-// classes
-pop.classList.add("pop");
-pop.classList.add("hide");
-span.classList.add("closebtn");
-form.classList.add("comment-frm");
-input.classList.add("comment");
-textarea.classList.add("comment");
-btn1.classList.add("comment-btn1");
-// appendChild form
-popup.appendChild(form);
-form.appendChild(head);
-form.appendChild(input);
-form.appendChild(textarea);
-form.appendChild(btn1);
-// appendChild pop
-pop.appendChild(span);
-pop.appendChild(mealImg);
-pop.appendChild(mealName);
-pop.appendChild(catergory);
-pop.appendChild(area);
-pop.appendChild(youtube);
-pop.appendChild(time);
-pop.appendChild(popup);
-// export pop
-
-// close popup
-span.addEventListener("click", () => {
-  pop.classList.add("hide");
-});
-
-parent.appendChild(pop)
-}
-
-
-// const id = display(console.log(id))
-
-export default showPopup;
-
+export default createPopup;
