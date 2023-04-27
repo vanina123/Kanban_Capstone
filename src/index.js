@@ -22,17 +22,15 @@ element.appendChild(myIcon);
 const data = newMeal.getAllMeals();
 const likes = newMeal.getAllLikes();
 
-
-
 const showMealCards = async () => {
   const DATA = await data;
-  const Likes = await likes
+  const Likes = await likes;
   for (let i = 0; i < Likes.length; i++) {
-    DATA.map((info) => {
+    DATA.forEach((info) => {
       if (info.idMeal === Likes[i].item_id) {
-        info.likes = Likes[i].likes
+        info.likes = Likes[i].likes;
       }
-    })
+    });
   }
 
   for (let i = 0; i < 9; i++) {
@@ -72,5 +70,4 @@ const showMealCards = async () => {
 
 window.addEventListener('load', () => {
   showMealCards();
- 
 });

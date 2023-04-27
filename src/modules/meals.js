@@ -13,7 +13,7 @@ class Meals {
     });
 
     const info = await response.json();
-    console.log(info)
+
     return info;
   }
 
@@ -29,7 +29,6 @@ class Meals {
     });
 
     const info = await response.json();
-    console.log(info)
 
     return info;
   }
@@ -37,4 +36,4 @@ class Meals {
 
 export default Meals;
 
-//ID: AF1rtbnUOOnqMyUNBr9N
+// ID: AF1rtbnUOOnqMyUNBr9N
