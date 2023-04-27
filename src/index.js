@@ -4,7 +4,7 @@ import logo from './logo.png';
 import Meals from './modules/meals.js';
 // import pop from "./modules/popup.js";
 // import { showPopup } from "./modules/popup.js"
-import createPopup from './modules/popup.js';
+import {createPopup} from './modules/popup.js';
 
 const element = document.querySelector('.img-ft');
 const headerImgContainer = document.querySelector('.logo-box');

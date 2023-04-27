@@ -4,12 +4,18 @@ import Meals from "./meals";
 const thePopup = document.querySelector('.popup-container');
 const newMeal = new Meals()
 
+const display = (show)=> {
+    console.log(show);
+}
+// ${specificComment}
 
 const createPopup =  (selected, id) => {
     const specificComment =  newMeal.getComment(id);
-    
+   console.log(specificComment) 
+   newMeal.getComment(id)
 // console.log(specifyComment)
-// newMeal.getComment(id)
+
+newMeal.getComment(id)
   thePopup.innerHTML = `<div class="pop">
   <span class="closebtn">×</span>
 <img src="${selected[0].strMealThumb}" class="meal-img">
@@ -19,7 +25,7 @@ const createPopup =  (selected, id) => {
 <div class="comment-section">
 <h2>Comment</h2>
 <div>
-${specificComment}
+ 
 </div>
 </div>
 <div>
@@ -45,10 +51,11 @@ const btn = document.querySelector('.comment-btn1')
 
 btn.addEventListener('click',(e)=>{
         e.preventDefault();
-newMeal.addComment(id, nameInput.value, comentInput.value)
+newMeal.addComment( id, nameInput.value, comentInput.value)
+newMeal.getComment(id)
 
 })
   
 };
 
-export default createPopup;
+export {createPopup, display};
