@@ -2,11 +2,15 @@ import _ from 'lodash';
 import './style.css';
 import logo from './logo.png';
 import Meals from './modules/meals.js';
+// import pop from "./modules/popup.js";
+// import { showPopup } from "./modules/popup.js"
+import createPopup from './modules/popup.js';
 
 const element = document.querySelector('.img-ft');
 const headerImgContainer = document.querySelector('.logo-box');
 const mealContainer = document.querySelector('.meals-container');
 const newMeal = new Meals();
+
 // Add the image to our existing div.
 const myIcon = new Image();
 const headerlogo = new Image();
@@ -44,11 +48,13 @@ const showMealCards = async () => {
     const nameLikeBox = document.createElement('div');
 
     card.classList.add('meal-card');
-    card.id = `meal${i}`;
+    likeBox.setAttribute('href', '#');
+    card.id = `${i + 1}`;
     mealImg.classList.add('meal-img');
     nameLikeBox.classList.add('name-like-box');
     likeQtyBox.classList.add('like-box');
     comment.classList.add('comment-btn');
+    comment.id = DATA[i].idMeal;
 
     mealImg.src = DATA[i].strMealThumb;
     mealName.innerText = DATA[i].strMeal;
@@ -66,8 +72,15 @@ const showMealCards = async () => {
 
     mealContainer.appendChild(card);
   }
-};
 
-window.addEventListener('load', () => {
-  showMealCards();
-});
+  const commentBtn = document.querySelectorAll('.comment-btn');
+  commentBtn.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const { id } = e.target;
+      const selectedObject = DATA.filter((data) => id === data.idMeal);
+      createPopup(selectedObject);
+    });
+  });
+};
+showMealCards();
+
