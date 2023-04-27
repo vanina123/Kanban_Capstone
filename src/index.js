@@ -72,7 +72,7 @@ const showMealCards = async () => {
 
     mealContainer.appendChild(card);
   }
-
+  
   const commentBtn = document.querySelectorAll('.comment-btn');
   commentBtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -82,5 +82,5 @@ const showMealCards = async () => {
     });
   });
 };
-showMealCards();
 
+showMealCards();
