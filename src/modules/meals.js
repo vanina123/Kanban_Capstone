@@ -32,8 +32,36 @@ class Meals {
 
     return info;
   }
+
+  getComment = async (id) => {
+    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/AF1rtbnUOOnqMyUNBr9N/comments?item_id=${id}/`, {
+
+    });
+
+    const info = await response.json();
+console.log(info)
+    return info;
+  }
+  
+  addComment = async (id, username, comment) => {
+    const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/AF1rtbnUOOnqMyUNBr9N/comments/', {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id:'52776',
+        username: username,
+        comment: comment
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+
+    const info = await response.json();
+
+    return info;
+  }
 }
 
 export default Meals;
-
+// /apps/abc234/comments?item_id=item1
 // ID: AF1rtbnUOOnqMyUNBr9N

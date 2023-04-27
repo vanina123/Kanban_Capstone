@@ -75,9 +75,10 @@ const showMealCards = async () => {
   const commentBtn = document.querySelectorAll('.comment-btn');
   commentBtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-      const { id } = e.target;
+      const { id } = e.target;  
       const selectedObject = DATA.filter((data) => id === data.idMeal);
-      createPopup(selectedObject);
+      createPopup(selectedObject, id);  
+      
     });
   });
 };
