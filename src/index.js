@@ -77,7 +77,7 @@ const showMealCards = async () => {
     btn.addEventListener('click', (e) => {
       const { id } = e.target;
       const selectedObject = DATA.filter((data) => id === data.idMeal);
-      createPopup(selectedObject);
+      createPopup(selectedObject, id);
     });
   });
 };
