@@ -49,6 +49,7 @@ const createPopup = async (selected, id) => {
   const comentSection = document.querySelector('.comment-section');
   const btn = document.querySelector('.comment-btn1');
   const date = new Date();
+  const usedData = `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`;
 
   btn.addEventListener('click', async (e) => {
     e.preventDefault();
@@ -56,7 +57,7 @@ const createPopup = async (selected, id) => {
     newMeal.addComment(id, nameInput.value, comentInput.value);
     let html = '';
 
-    html += `<div> ${date} ${nameInput.value} : ${comentInput.value} </div>`;
+    html += `<div> ${usedData} ${nameInput.value} : ${comentInput.value} </div>`;
     comentSection.insertAdjacentHTML('beforeend', html);
     commentsCounterVaribale += 1;
     commentElement.textContent = `Comments (${commentsCounterVaribale})`;
