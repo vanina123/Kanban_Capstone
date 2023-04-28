@@ -2,24 +2,25 @@ import _ from 'lodash';
 import './style.css';
 import logo from './logo.png';
 import Meals from './modules/meals.js';
-import updateLikes from './modules/functionalities.js';
 import createPopup from './modules/popup.js';
+import likeCounter from './modules/likeCounter.js';
+import mealsCounter from './modules/mealsConter.js';
 
 const element = document.querySelector('.img-ft');
 const headerImgContainer = document.querySelector('.logo-box');
 const mealContainer = document.querySelector('.meals-container');
 const newMeal = new Meals();
-
-// Add the image to our existing div.
 const myIcon = new Image();
 const headerlogo = new Image();
+const mealsQty = document.querySelector('.meals-qty');
+
 headerlogo.src = logo;
 myIcon.src = logo;
 
 myIcon.classList.add('logo');
 headerlogo.classList.add('header-logo');
-headerImgContainer.appendChild(headerlogo);
 
+headerImgContainer.appendChild(headerlogo);
 element.appendChild(myIcon);
 
 const data = newMeal.getAllMeals();
@@ -35,6 +36,7 @@ const showMealCards = async () => {
       }
     });
   }
+  mealsQty.innerHTML = `(${mealsCounter(DATA)})`;
 
   for (let i = 0; i < 9; i++) {
     const card = document.createElement('div');
@@ -73,6 +75,7 @@ const showMealCards = async () => {
 
     mealContainer.appendChild(card);
   }
+
   const commentButtons = document.querySelectorAll('.comment-btn');
   commentButtons.forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -83,20 +86,20 @@ const showMealCards = async () => {
   });
 
   const likeButtons = document.querySelectorAll('.like-btn');
-  let likeCounter = 0;
+  let likeCounts = 0;
+
   likeButtons.forEach((likebtn) => {
     likebtn.addEventListener('click', async (e) => {
       e.preventDefault();
       const id = e.target.id.replace('like', '');
-      const amnt = await updateLikes(id);
-      likeCounter = amnt;
-      likeCounter = +likeCounter;
-      likeCounter += 1;
+      const likeData = await newMeal.getAllLikes();
+      const amnt = await likeCounter(id, likeData);
+      likeCounts = amnt;
+      likeCounts += 1;
       const likeQty = document.getElementById(`qty${id}`);
-      likeQty.textContent = `${likeCounter} Likes`;
+      likeQty.textContent = `${likeCounts} Likes`;
       newMeal.setLikes(id);
     });
   });
 };
-
 showMealCards();
