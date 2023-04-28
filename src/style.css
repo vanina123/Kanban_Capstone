@@ -62,7 +62,6 @@ header {
 }
 
 .meal-card {
-  border: 1px solid blue;
   margin: 10px;
   display: flex;
   flex-direction: column;
