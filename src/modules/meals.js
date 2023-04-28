@@ -1,4 +1,4 @@
-import {display} from './popup.js'
+// import { display } from './popup.js'
 
 class Meals {
   getAllMeals = async () => {
@@ -31,21 +31,14 @@ class Meals {
     });
 
     const info = await response.json();
-
-    return info;
   }
 
   getComment = async (id) => {
-    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/AF1rtbnUOOnqMyUNBr9N/comments?item_id=${id}`, {
+    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/AF1rtbnUOOnqMyUNBr9N/comments?item_id=${id}`);
 
-    });
-    // console.log(id)
+    const data = await response.json();
 
-
-    const info = await response.json();
-    display(info)
-// console.log(info)
-    return info;
+    return data;
   }
 
   addComment = async (id, username, comment) => {
@@ -53,8 +46,8 @@ class Meals {
       method: 'POST',
       body: JSON.stringify({
         item_id: id,
-        username: username,
-        comment: comment
+        username,
+        comment,
       }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',

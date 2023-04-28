@@ -1,21 +1,10 @@
-import Meals from "./meals";
-
+import { forEach } from 'lodash';
+import Meals from './meals.js';
 
 const thePopup = document.querySelector('.popup-container');
-const newMeal = new Meals()
+const newMeal = new Meals();
 
-const display = (show)=> {
-    console.log(show);
-}
-// ${specificComment}
-
-const createPopup =  (selected, id) => {
-    const specificComment =  newMeal.getComment(id);
-   console.log(specificComment) 
-   newMeal.getComment(id)
-// console.log(specifyComment)
-
-newMeal.getComment(id)
+const createPopup = (selected, id) => {
   thePopup.innerHTML = `<div class="pop">
   <span class="closebtn">×</span>
 <img src="${selected[0].strMealThumb}" class="meal-img">
@@ -24,7 +13,7 @@ newMeal.getComment(id)
 <a href="#" class="youtube">${selected[0].strYoutube}</a>
 <div class="comment-section">
 <h2>Comment</h2>
-<div>
+<div class="comment-section">
  
 </div>
 </div>
@@ -44,18 +33,27 @@ newMeal.getComment(id)
   });
 
   const nameInput = document.getElementById('name');
-  const comentInput = document.getElementById('text')
-  const form = document.querySelector('.comment-frm')
-const btn = document.querySelector('.comment-btn1')
+  const comentInput = document.getElementById('text');
+  const comentSection = document.querySelector('.comment-section');
+  const btn = document.querySelector('.comment-btn1');
 
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    newMeal.addComment(id, nameInput.value, comentInput.value);
+    const theComments = newMeal.getComment(id);
+    theComments.then((d) => {
+      comentSection.innerHTML = '';
+      d.forEach((comment) => {
+        comentSection.innerHTML += `<div>${comment.creation_date}  ${comment.username}:  ${comment.comment}<div>`;
+      });
+    });
+  });
 
-btn.addEventListener('click',(e)=>{
-        e.preventDefault();
-newMeal.addComment( id, nameInput.value, comentInput.value)
-newMeal.getComment(id)
-
-})
-  
+  const specificComment = newMeal.getComment(id);
+  specificComment.then((d) => {
+    d.forEach((comment) => {
+      comentSection.innerHTML += `<div>${comment.creation_date}  ${comment.username}:  ${comment.comment}<div>`;
+    });
+  });
 };
-
-export {createPopup, display};
+export default createPopup;

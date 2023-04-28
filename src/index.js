@@ -4,7 +4,7 @@ import logo from './logo.png';
 import Meals from './modules/meals.js';
 // import pop from "./modules/popup.js";
 // import { showPopup } from "./modules/popup.js"
-import {createPopup} from './modules/popup.js';
+import createPopup from './modules/popup.js';
 
 const element = document.querySelector('.img-ft');
 const headerImgContainer = document.querySelector('.logo-box');
@@ -75,10 +75,9 @@ const showMealCards = async () => {
   const commentBtn = document.querySelectorAll('.comment-btn');
   commentBtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-      const { id } = e.target;  
+      const { id } = e.target;
       const selectedObject = DATA.filter((data) => id === data.idMeal);
-      createPopup(selectedObject, id);  
-      
+      createPopup(selectedObject, id);
     });
   });
 };
