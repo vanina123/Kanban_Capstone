@@ -118,7 +118,7 @@ Jest testing function
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo](still to be deloyed)
+- [Live Demo](https://vanina123.github.io/Kanban_Capstone/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
