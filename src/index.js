@@ -6,6 +6,7 @@ import createPopup from './modules/popup.js';
 import likeCounter from './modules/likeCounter.js';
 import mealsCounter from './modules/mealsConter.js';
 
+const mealsQty = document.querySelector('.meals-qty');
 const element = document.querySelector('.img-ft');
 const headerImgContainer = document.querySelector('.logo-box');
 const mealContainer = document.querySelector('.meals-container');
