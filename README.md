@@ -8,18 +8,17 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[Js capstone project\] ](#-js-capstone-project-)
-  - [🛠 Built With `HTML/CSS`,`Nodejs/JavaScript`, and `Webpack`](#-built-with-htmlcssnodejsjavascript-and-webpack)
-    - [Tech Stack `HTML/CSS` with `JavaScript` \& `Webpack`](#tech-stack-htmlcss-with-javascript--webpack)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack ](#tech-stack)
     - [Key Features ](#key-features-)
-  - [💻 Getting Started ](#-getting-started-)
+  - [💻 Getting Started](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
     - [Run tests](#run-tests)
-    - [Live Preview](#live-preview)
-    - [Deployment](#deployment)
+    - [Live Video](#live-video)
+    - [Live Demo](#live-demo)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -32,10 +31,9 @@
 
 The Kanban_Capstone project is about building a web application based on an external API. We will select an <a href="https://www.themealdb.com/api.php">API</a>that provides data about a meals and then build the webapp with it.
 
-## 🛠 Built With <a name="built-with">`HTML/CSS`,`Nodejs/JavaScript`, and `Webpack`</a>
+## 🛠 Built With <a name="built-with">
 
-### Tech Stack <a name="tech-stack">`HTML/CSS` with `JavaScript` & `Webpack`</a>
-
+### Tech Stack <a name="tech-stack">
 <details>
   <summary>Client</summary>
   <ul>
@@ -112,7 +110,7 @@ Jest testing function
   npm test
 ```
 
-## Live Video
+## Live Video <a name="live-video"></a>
 
 [Watch the video](https://drive.google.com/file/d/1-ZdCxPyzWmBs1ATutYFIDrWadF3Dazui/view?usp=share_link)
 
