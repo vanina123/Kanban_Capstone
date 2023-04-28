@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header styling begins */
+.header-logo {
+  width: 80px;
+  margin: 1vw 0 0 0;
+}
+
+header {
+  background-color: #212121;
+  padding: 0 10vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meal-item {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.meal-item:hover {
+  color: #d5a40c;
+}
+
+#search-box {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 2px;
+  border-radius: 10px;
+}
+
+#search-btn {
+  border-style: none;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+#search-btn:hover {
+  background-color: #d5a40c;
+  border-style: none;
+}
+
+/* Header styling ends */
+
+/* Cards section styling starts */
+
+.meals-container {
+  padding: 0 10vw;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-rows: 33.33% 33.33% 33.33%;
+  height: 100%;
+}
+
+.meal-card {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#meal0 {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.meal-img {
+  width: 100%;
+}
+
+.like-icn {
+  font-size: 20px;
+  color: #d8070b;
+}
+
+.name-like-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-like-box p {
+  margin: 0;
+}
+
+.like-box p {
+  margin: 0;
+}
+
+.comment-btn {
+  width: 80%;
+  margin: 2px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.comment-btn:hover {
+  background-color: #d5a40c;
+}
+
+/* Cards section styling ends */
+
+/* Footer styling begins */
+footer {
+  color: white;
+  background-color: #212121;
+  align-content: center;
+  padding: 0 10vw;
+}
+
+.logo {
+  width: 80px;
+}
+
+.autor {
+  color: #d8070b;
+}
+
+.rights {
+  color: #d8070b;
+}
+
+.pop a {
+  text-decoration: none;
+  margin-left: 58px;
+}
+
+.autor a {
+  color: gray;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.autor a:hover {
+  color: white;
+}
+
+.meal-ft {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Footer styling ends */
+
+/* popup styling */
+
+.popup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #311432;
+  padding: 2em;
+}
+
+.pop {
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+  position: fixed;
+  padding: 2em;
+  overflow: scroll;
+  top: 5vw;
+  height: 500px;
+  width: 50%;
+}
+
+.popup-container img {
+  width: 50%;
+  align-self: center;
+  margin-bottom: 1em;
+}
+
+.category-area-box {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 4vw;
+}
+
+.meal-name {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+#comment-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1em;
+  align-self: center;
+}
+
+.comment-frm {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-left: 35%;
+}
+
+.comment {
+  margin: 0 0 20px 0;
+}
+
+.comment-btn1 {
+  border-radius: 12px;
+  padding: 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: x-large;
+  transition: 0.5s ease;
+}
+
+.comment-btn1:hover {
+  background-color: #d5a40c;
+}
+
+.closebtn {
+  text-align: right;
+  font-size: 30px;
+  color: #d5a40c;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.hide {
+  display: none;
+}
