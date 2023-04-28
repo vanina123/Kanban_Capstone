@@ -4,7 +4,7 @@ import logo from './logo.png';
 import Meals from './modules/meals.js';
 import createPopup from './modules/popup.js';
 import likeCounter from './modules/likeCounter.js';
-import mealsCounter from './modules/mealsConter.js';
+import itemCounter from './modules/itemCounter.js';
 
 const element = document.querySelector('.img-ft');
 const headerImgContainer = document.querySelector('.logo-box');
@@ -29,16 +29,16 @@ const likes = newMeal.getAllLikes();
 const showMealCards = async () => {
   const DATA = await data;
   const Likes = await likes;
-  for (let i = 0; i < Likes.length; i++) {
+  for (let i = 0; i < DATA.length; i++) {
     DATA.forEach((info) => {
       if (info.idMeal === Likes[i].item_id) {
         info.likes = Likes[i].likes;
       }
     });
   }
-  mealsQty.innerHTML = `(${mealsCounter(DATA)})`;
+  mealsQty.innerHTML = `(${itemCounter(DATA)})`;
 
-  for (let i = 0; i < 9; i++) {
+  for (let i = 0; i < DATA.length; i++) {
     const card = document.createElement('div');
     const mealImg = new Image();
     const mealName = document.createElement('p');

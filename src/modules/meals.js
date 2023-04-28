@@ -5,8 +5,14 @@ class Meals {
     const response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=c');
 
     const info = await response.json();
+    const selected = info.meals;
+    const filtered = [];
 
-    return info.meals;
+    for (let i = 0; i < 9; i++) {
+      filtered.push(selected[i]);
+    }
+
+    return filtered;
   }
 
   getAllLikes = async () => {
