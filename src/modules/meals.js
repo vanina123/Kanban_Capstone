@@ -33,11 +33,10 @@ class Meals {
     const info = await response.json();
   }
 
+  // comment
   getComment = async (id) => {
     const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/AF1rtbnUOOnqMyUNBr9N/comments?item_id=${id}`);
-
     const data = await response.json();
-
     return data;
   }
 
@@ -53,18 +52,10 @@ class Meals {
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
-
     const info = await response.json();
-
     return info;
   }
-  // export const getData = async () => {
-  //   const request = await fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/TePAWbpwiBHr7xSY6An3/comments");
-  //   const response = await request.json()
-  //   return response
-  // };
 }
 
 export default Meals;
-// /apps/abc234/comments?item_id=item1
 // ID: AF1rtbnUOOnqMyUNBr9N
