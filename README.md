@@ -114,7 +114,7 @@ Jest testing function
 
 ## Live Video
 
-[Watch the video](still to come)
+[Watch the video](https://drive.google.com/file/d/1-ZdCxPyzWmBs1ATutYFIDrWadF3Dazui/view?usp=share_link)
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
