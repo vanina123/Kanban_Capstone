@@ -87,7 +87,7 @@ header {
   width: 100%;
 }
 
-#like-icn {
+.like-icn {
   font-size: 20px;
   color: #d8070b;
 }
@@ -138,6 +138,11 @@ footer {
   color: #d8070b;
 }
 
+.pop a {
+  text-decoration: none;
+  margin-left: 58px;
+}
+
 .autor a {
   color: gray;
   font-size: 10px;
@@ -158,6 +163,56 @@ footer {
 /* Footer styling ends */
 
 /* popup styling */
+
+.popup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #311432;
+
+  /* margin: 1em auto; */
+  padding: 2em;
+}
+
+.pop {
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+  position: absolute;
+  padding: 2em;
+  overflow: scroll;
+  top: 5vw;
+  height: 400px;
+  width: 50%;
+}
+
+.popup-container img {
+  width: 50%;
+  align-self: center;
+  margin-bottom: 1em;
+}
+
+.category-area-box {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 4vw;
+}
+
+.meal-name {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+#comment-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1em;
+  align-self: center;
+}
+
 .comment-frm {
   display: flex;
   flex-direction: column;
@@ -181,16 +236,6 @@ footer {
 
 .comment-btn1:hover {
   background-color: #d5a40c;
-}
-
-.pop {
-  display: flex;
-  flex-direction: column;
-  background-color: #d8070b;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
 }
 
 .closebtn {

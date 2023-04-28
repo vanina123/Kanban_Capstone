@@ -6,6 +6,7 @@ import Meals from './modules/meals.js';
 // import { showPopup } from "./modules/popup.js"
 import createPopup from './modules/popup.js';
 
+const mealsQty = document.querySelector('.meals-qty');
 const element = document.querySelector('.img-ft');
 const headerImgContainer = document.querySelector('.logo-box');
 const mealContainer = document.querySelector('.meals-container');
