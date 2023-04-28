@@ -29,6 +29,7 @@ const likes = newMeal.getAllLikes();
 const showMealCards = async () => {
   const DATA = await data;
   const Likes = await likes;
+  
   for (let i = 0; i < DATA.length; i++) {
     DATA.forEach((info) => {
       if (info.idMeal === Likes[i].item_id) {
