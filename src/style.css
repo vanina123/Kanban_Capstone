@@ -87,7 +87,7 @@ header {
   width: 100%;
 }
 
-#like-icn {
+.like-icn {
   font-size: 20px;
   color: #d8070b;
 }
