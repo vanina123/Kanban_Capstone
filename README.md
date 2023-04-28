@@ -28,11 +28,9 @@
   - [❓ FAQ (OPTIONAL) ](#-faq-optional-)
   - [📝 License ](#-license-)
 
-<!-- PROJECT DESCRIPTION -->
+# 📖 Kanban_Capstone project <a name="about-project"></a>
 
-# 📖 [Kanban_Capstone project] <a name="about-project"></a>
-
-The Kanban_Capstone project is about building a web application based on an external API. We will select an API (https://www.themealdb.com/api.php) that provides data about a meals and then build the webapp with it.
+The Kanban_Capstone project is about building a web application based on an external API. We will select an <a href="https://www.themealdb.com/api.php">API</a>that provides data about a meals and then build the webapp with it.
 
 ## 🛠 Built With <a name="built-with">`HTML/CSS`,`Nodejs/JavaScript`, and `Webpack`</a>
 
@@ -109,7 +107,7 @@ run this command
 
 ### Run tests
 
-Testing with Lint-checks:
+Jest testing function
 
 ```sh
   npm test
@@ -145,8 +143,8 @@ Testing with Lint-checks:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Make the webapp more dynamic]**
-- [ ] **[Form validation]**
+- **Make the webapp more dynamic**
+- **Form validation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -176,7 +174,7 @@ I would like to thank [themealdb](https://www.themealdb.com/api.php) for helping
 
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
 
-- **[Why test functions?]**
+- **Why test functions?**
 
   - To ensure tested functions are working correctly especially when data increases
 
