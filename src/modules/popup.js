@@ -14,7 +14,7 @@ const commentsShow = async (data) => {
 const createPopup = async (selected, id) => {
   const specificComment = newMeal.getComment(id);
   const data = await specificComment;
-  const commentsCounterVaribale = commentCounter(data);
+  let commentsCounterVaribale = commentCounter(data);
   thePopup.innerHTML = `<div class="pop">
   <span class="closebtn">×</span>
 <img src="${selected[0].strMealThumb}" class="popup-img">
@@ -49,18 +49,17 @@ const createPopup = async (selected, id) => {
   const comentSection = document.querySelector('.comment-section');
   const btn = document.querySelector('.comment-btn1');
   const date = new Date();
-  const commentElement = document.querySelector('.insert');
 
   btn.addEventListener('click', async (e) => {
     e.preventDefault();
+    const commentElement = document.querySelector('.insert');
     newMeal.addComment(id, nameInput.value, comentInput.value);
     let html = '';
-    commentElement.textContent = '';
+
     html += `<div> ${date} ${nameInput.value} : ${comentInput.value} </div>`;
     comentSection.insertAdjacentHTML('beforeend', html);
-    const specificComment = newMeal.getComment(id);
-    const data = await specificComment;
-    commentsShow(data);
+    commentsCounterVaribale += 1;
+    commentElement.textContent = `Comments (${commentsCounterVaribale})`;
   });
 
   specificComment.then((d) => {
