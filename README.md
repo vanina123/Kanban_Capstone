@@ -55,9 +55,8 @@ The Kanban_Capstone project is about building a web application based on an exte
 
 ### Key Features <a name="key-features"></a>
 
-- **[Nodejs for development]**
-- **[Webpack ]**
-- **[HTML, CSS, JAVASCRIPT]**
+- **[Pop up window]** This displays the information of a selected meal and provides the opportunity to add a comment about the meal
+- **[Like buttons]** This buttons allows a user to like a meal displayed on the homepage
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
