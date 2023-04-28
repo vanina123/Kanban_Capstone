@@ -2,8 +2,7 @@ import _ from 'lodash';
 import './style.css';
 import logo from './logo.png';
 import Meals from './modules/meals.js';
-// import pop from "./modules/popup.js";
-// import { showPopup } from "./modules/popup.js"
+import updateLikes from './modules/functionalities.js';
 import createPopup from './modules/popup.js';
 
 const mealsQty = document.querySelector('.meals-qty');
@@ -50,6 +49,8 @@ const showMealCards = async () => {
 
     card.classList.add('meal-card');
     likeBox.setAttribute('href', '#');
+    likeBox.classList.add('like-btn');
+    likeQty.id = `qty${DATA[i].idMeal}`;
     card.id = `${i + 1}`;
     mealImg.classList.add('meal-img');
     nameLikeBox.classList.add('name-like-box');
@@ -59,7 +60,7 @@ const showMealCards = async () => {
 
     mealImg.src = DATA[i].strMealThumb;
     mealName.innerText = DATA[i].strMeal;
-    likeBox.innerHTML = '<i class="fa fa-heart" id="like-icn"></i>';
+    likeBox.innerHTML = `<i class="fa fa-heart like-icn" id="like${DATA[i].idMeal}"></i>`;
     likeQty.innerText = `${DATA[i].likes} likes`;
     comment.innerText = 'comment';
 
@@ -73,12 +74,28 @@ const showMealCards = async () => {
 
     mealContainer.appendChild(card);
   }
-  const commentBtn = document.querySelectorAll('.comment-btn');
-  commentBtn.forEach((btn) => {
+  const commentButtons = document.querySelectorAll('.comment-btn');
+  commentButtons.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       const { id } = e.target;
       const selectedObject = DATA.filter((data) => id === data.idMeal);
       createPopup(selectedObject, id);
+    });
+  });
+
+  const likeButtons = document.querySelectorAll('.like-btn');
+  let likeCounter = 0;
+  likeButtons.forEach((likebtn) => {
+    likebtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const id = e.target.id.replace('like', '');
+      const amnt = await updateLikes(id);
+      likeCounter = amnt;
+      likeCounter = +likeCounter;
+      likeCounter += 1;
+      const likeQty = document.getElementById(`qty${id}`);
+      likeQty.textContent = `${likeCounter} Likes`;
+      newMeal.setLikes(id);
     });
   });
 };
